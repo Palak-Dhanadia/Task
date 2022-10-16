@@ -1,0 +1,144 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: #22252a;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.btn-primary {
+    color: black !important;
+    background-color: #28a745 !important;
+    border-color: #28a745;
+    border-radius: 1rem;
+}
+.btn-secondary {
+    color: #cccccc;
+    cursor: not-allowed !important;
+    border-radius: 2rem;
+    color:black !important;
+}
+.maindiv {
+    background: #282b2f !important;
+    border: 1px solid white;
+    width: 74%;
+    margin: 5rem auto;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+.tableorder{color:white;}
+.thide {
+    visibility: hidden;
+}
+.container {
+    // background: #a0a2ac !important;
+    border: 0px solid gray;
+    max-width: 100% !important;
+    max-width: 100% !important;
+    padding: 0px;
+}
+
+.card {
+    background: #282b2f !important;
+    border: 0px solid !important;
+    border-radius: 0px !important;
+    padding: 1rem;
+}
+.row{display:block !important;}
+.text-left {
+    color: white;
+    padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+
+}
+.card-title {
+    color: #787575;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-decoration: underline;
+}
+.ordetable {
+    border: 1px solid green;
+}
+.dataTables_length{
+    display:none;
+}
+.dataTables_wrapper
+{
+    overflow-x:scroll;
+}
+.disabled {
+    color: #fff !important
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: #fff !important;
+}
+.dataTables_info,.dataTables_paginate paging_simple_numbers {
+    color: white !important;
+}
+.dataTables_filter {
+    display: none;
+}
+.tablediv
+{
+    color:white;
+}
+.thead-dark
+{
+    background:darkgray;
+    color:black;
+    font-size:1rem;
+    font-weight:bold
+}

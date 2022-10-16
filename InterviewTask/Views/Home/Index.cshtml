@@ -1,0 +1,101 @@
+﻿@model InterviewTask.Models.Import
+@{
+    ViewData["Title"] = "Home Page";
+    int counter = 1;
+}
+<head>
+    <link rel="stylesheet" href="~/css/jquery.dataTables.css" asp-append-version="true" />
+    <script src="~/lib/DataTable/jquery.dataTables.min.js" defer></script>
+    <script src="~/js/sendOrder/SendOrder.js"></script>
+</head>
+<body>
+    @if (Model == null)
+    {
+        <div class="maindiv">
+            <form method="post" asp-action="Import" asp-controller="Home" autocomplete="off" enctype="multipart/form-data">
+                <div id="formCard" class="card mt-2 mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Import And Export Order File </h2>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-4">                               
+                                @Html.ValidationSummary(false, "", new { @class = "text-red" })
+                            </div>
+                        </div>
+                        <div class="row justify-content-left">
+                            <div class="text-left">Please Choose Order File To Import<br/></div>
+                            <div><p class="card-text text-left">
+                                Select file to import. @Html.TextBoxFor(x => x.FormFile, new { @type = "file", @class = "col-sm-4" })
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <button id="saveButton" class="btn btn-primary m-2" type="submit">IMPORT</button>
+                            <button id="export-grey" class="btn btn-secondary m-2" type="button">EXPORT</button>
+                            <button id="sendorder-grey" class="btn btn-secondary m-2" type="button">SEND ORDER</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+    @{
+        @if (Model != null)
+        {
+            
+                <div class="maindiv tablediv">
+                <form method="post" asp-action="ExportXML" asp-controller="Home" autocomplete="off">
+                    <div class="row justify-content-left">
+                        <button id="saveButton" class="btn btn-primary m-2" type="submit">EXPORT</button>
+                        <button id="button" class="btn btn-primary m-2">Send Order</button>
+                    </div>
+                </form>
+                <table class="display" id="orders">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Order No.</th>
+                            <th scope="col">Consignment No</th>
+                            <th scope="col">Parcel Code</th>
+                            <th scope="col">Consignee Name</th>
+                            <th scope="col">Address One</th>
+                            <th scope="col">Address Two</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Country Code</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Currency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var record in Model.Records)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(m => record.OrderNumber)</td>
+                                <td>@Html.DisplayFor(m => record.ConsignmentNumber)</td>
+                                <td>@Html.DisplayFor(m => record.ParcelCode)</td>
+                                <td>@record.ConsigneeName</td>
+                                <td>@record.AddressOne</td>
+                                <td>@record.AddressTwo</td>
+                                <td>@record.City</td>
+                                <td>@record.CountryCode</td>
+                                <td>@record.ItemQuantity</td>
+                                <td>@record.ItemValue</td>
+                                <td>@record.ItemWeight</td>
+                                <td>@record.ItemDesciption</td>
+                                <td>@record.ItemCurrency</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                </div>
+                
+            
+        }
+    }
+</body>
